@@ -1,0 +1,21 @@
+CREATE KEYSPACE esv
+  WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
+
+use esv;
+CREATE TABLE users (
+  user_name varchar PRIMARY KEY,
+  password varchar,
+  gender varchar,
+  session_token varchar,
+  state varchar,
+  birth_year bigint
+);
+CREATE TABLE emp (
+  empID int,
+  deptID int,
+  first_name varchar,
+  last_name varchar,
+  PRIMARY KEY (empID, deptID)
+);
+
+
